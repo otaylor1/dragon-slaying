@@ -23,7 +23,7 @@ namespace DragonSlaying
         public int HitPoints
         {
             get
-            { 
+            {
                 return _hitPoints = 0;
             }
 
@@ -100,7 +100,7 @@ namespace DragonSlaying
         /// <param name="diceRoll">A number (1-20) from a dice roll, relating to the effectiveness of the attack</param>
         public void Attack(Dragon opponent, int diceRoll)
         {
-            // TODO
+            
             int dragonDamage = diceRoll + Offense - opponent.Defense;
 
             if (dragonDamage < 0)
@@ -119,7 +119,6 @@ namespace DragonSlaying
             }
 
             opponent.HitPoints -= dragonDamage;
-            
 
         }
 
@@ -134,7 +133,26 @@ namespace DragonSlaying
         /// <param name="diceRoll">A number (1-20) from a dice roll, relating to the effectiveness of the block</param>
         public void Defend(Dragon opponent, int diceRoll)
         {
-            // TODO
+            
+            int heroDamage = opponent.Offense - diceRoll - Defense;
+
+            if (heroDamage < 0)
+            {
+                heroDamage = 0;
+            }
+
+            if (diceRoll == 1)
+            {
+                heroDamage = opponent.Offense;
+            }
+
+            if (diceRoll == 20)
+            {
+                heroDamage = 0;
+            }
+
+            HitPoints -= heroDamage;
+
         }
     }
 }
