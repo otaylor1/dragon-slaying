@@ -34,7 +34,7 @@ namespace DragonSlaying
         public int Roll()
         {
             // TODO
-            throw new NotImplementedException();
+            return 1;
         }
     }
 }

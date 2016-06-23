@@ -45,7 +45,8 @@ namespace DragonSlaying
         public override string ToString()
         {
             // TODO
-            throw new NotImplementedException();
+            return "";
+            
         }
 
 
@@ -57,7 +58,7 @@ namespace DragonSlaying
         public bool IsAlive()
         {
             // TODO
-            throw new NotImplementedException();
+            return true; 
         }
 
         /// <summary>
