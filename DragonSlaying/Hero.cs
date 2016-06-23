@@ -13,7 +13,9 @@ namespace DragonSlaying
         public int Defense { get; set; }
         public int MaxHitPoints { get; set; }
         // TODO: Add any necessary fields
-        
+
+        private int _hitPoints;
+
         /// <summary>
         /// Keeps track of the number of hit points a Hero has. Cannot be less than 0
         /// (if a negative number is passed in, HitPoints will be set to 0 instead).
@@ -21,13 +23,23 @@ namespace DragonSlaying
         public int HitPoints
         {
             get
-            {
-                // TODO
-                throw new NotImplementedException();
+            { 
+                return _hitPoints = 0;
             }
+
             set
             {
-                // TODO
+
+                if (value < 0)
+                {
+                    _hitPoints = 0;
+                }
+
+                else
+                {
+                    _hitPoints = value;
+                }
+
             }
         }
 
@@ -44,7 +56,7 @@ namespace DragonSlaying
         /// <returns></returns>
         public override string ToString()
         {
-            
+
             var sb = new StringBuilder();
 
             sb.AppendLine(Name);
@@ -53,7 +65,7 @@ namespace DragonSlaying
             sb.AppendFormat("HP: {0}/{1}\n", HitPoints, MaxHitPoints);
 
             return sb.ToString();
-            
+
         }
 
 
@@ -64,7 +76,7 @@ namespace DragonSlaying
         /// <returns>true if the Hero is alive, false if they are not</returns>
         public bool IsAlive()
         {
-            
+
             if (HitPoints > 0)
             {
                 return true;
@@ -74,7 +86,7 @@ namespace DragonSlaying
             {
                 return false;
             }
-            
+
         }
 
         /// <summary>
