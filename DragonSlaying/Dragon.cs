@@ -33,8 +33,17 @@ namespace DragonSlaying
         /// <returns>true if the Dragon is alive, false if they are not</returns>
         public bool IsAlive()
         {
-            // TODO
-            return true; 
+            
+            if (HitPoints > 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+            
         }
 
     }
