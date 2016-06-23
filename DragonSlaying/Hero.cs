@@ -44,8 +44,15 @@ namespace DragonSlaying
         /// <returns></returns>
         public override string ToString()
         {
-            // TODO
-            return "";
+            
+            var sb = new StringBuilder();
+
+            sb.AppendLine(Name);
+            sb.AppendLine("==========");
+            sb.AppendFormat("Off: {0}\tDef: {1}\n", Offense, Defense);
+            sb.AppendFormat("HP: {0}/{1}\n", HitPoints, MaxHitPoints);
+
+            return sb.ToString();
             
         }
 
@@ -57,8 +64,17 @@ namespace DragonSlaying
         /// <returns>true if the Hero is alive, false if they are not</returns>
         public bool IsAlive()
         {
-            // TODO
-            return true; 
+            
+            if (HitPoints > 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+            
         }
 
         /// <summary>
