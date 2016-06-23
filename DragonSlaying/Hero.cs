@@ -101,6 +101,26 @@ namespace DragonSlaying
         public void Attack(Dragon opponent, int diceRoll)
         {
             // TODO
+            int dragonDamage = diceRoll + Offense - opponent.Defense;
+
+            if (dragonDamage < 0)
+            {
+                dragonDamage = 0;
+            }
+
+            if (diceRoll == 1)
+            {
+                dragonDamage = 0;
+            }
+
+            if (diceRoll == 20)
+            {
+                dragonDamage = Offense * 3;
+            }
+
+            opponent.HitPoints -= dragonDamage;
+            
+
         }
 
         /// <summary>
