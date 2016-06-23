@@ -9,13 +9,15 @@ namespace DragonSlaying
     public class Die
     {
         Random random;
-        public int NumberOfSides { get; set; }
+        public int NumberOfSides {get; set;}
 
         /// <summary>
         /// Constructs a 6-sided Die.
         /// </summary>
-        public Die() : this(6)
+        public Die() // an alt. to what is below. Put " : this(6) " on this line and it will do the same thing.
         {
+            random = new Random();
+            NumberOfSides = 6;
         }
 
         /// <summary>
@@ -25,6 +27,9 @@ namespace DragonSlaying
         public Die(int numberOfSides)
         {
             // TODO
+            NumberOfSides = numberOfSides;
+            random = new Random();
+
         }
 
         /// <summary>
